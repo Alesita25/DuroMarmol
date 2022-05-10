@@ -11,7 +11,7 @@ img {
     display: block; }
 
 .rounded-circle {
-    border-radius: 50% !important; }
+    border-radius: 100% !important; }
 .wrapper {
     width: 100%; }
 
@@ -77,3 +77,48 @@ img {
                 padding: 20px;
                 box-sizing: border-box;
               }
+
+
+.contenedorTarjetas{
+  margin-left: 10%;
+}
+.fecha{
+font-weight: bold;
+font-size:18px;
+}
+
+
+.valor{
+  font-weight: initial;
+  font-size: 27px;
+  }
+
+
+.titulo{
+  font-size:26px;
+  text-transform: uppercase;
+  background-color: #a5947e/*#1d1b31*/ !important;
+  font-weight: lighter;
+}
+.tarjetasValor{
+  margin: 25px;
+    white-space: nowrap;
+    overflow: hidden;
+    display: flex;
+    width: 511px;
+
+    background-color: #cdbba3/*#1d1b31*/ !important;
+}
+
+
+@media (max-width: 850px) {
+
+  .contenedorTarjetas{
+    margin-left: 0%;
+  }
+
+  .titulo{
+    font-size:15px;
+  }
+}
+
