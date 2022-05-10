@@ -15,45 +15,44 @@
     integrity="sha256-FtvY52LIDZ2/QHmDNay6PTYvLlRsZICHak0iJEAIBuM=" crossorigin="anonymous"></script>  
   
   
-  <script type="text/javascript">
-      $(document).ready(function() 
-        {
-        // $("#enviar").click(function(){
-        $("#error").hide();
-        $("#formulario").submit(function() {
-          var mensaje ="";
-    
-          if($("#numeroPedido").val().trim().lenght==0){
-    
-            mensaje = "El Número de pedido está en blanco";
-    
-          }
-          if($("#rutCliente").val().trim().lenght==0){
-    
-            mensaje = "El rut está en blanco";
-          }
-          if($("#nombreCliente").val().trim().lenght==0){
-    
-            mensaje = "El Nombre está en blanco";
+    <script type="text/javascript">
+
+      function validacion() {
+        var mensaje ="";
+        var numeroCotizacion = $("#numeroCotizacion").val();    
+        var rutCliente = $("#rutCliente").val();
+        var nombreCliente = $("#nombreCliente").val();
+        var material = $("#material").val();   
+        if(numeroCotizacion=="" || numeroCotizacion==null){
+          alert("El Número de cotización está en blanco");
+          document.formulario.numeroCotizacion.focus()
+          return;
+        }
+        if(rutCliente=="" || rutCliente==null){
+          alert("El rut está en blanco");
+          document.formulario.rutCliente.focus()
   
-          }
-          if($("#detalleProductos").val().trim().lenght==0){
-    
-            mensaje = "El Detalle de productos está en blanco";
+          return;
+        }
+        if(nombreCliente=="" || nombreCliente==null){
+          alert("El Nombre está en blanco");
+          document.formulario.nombreCliente.focus()
   
-          }
+          return;
+        }
+        if(material=="" || material==null){
+          alert("El Detalle de productos está en blanco");
+          document.formulario.material.focus()
   
-          if(mensaje !="")
-          {
-            $("#error").html(mensaje);
-            $("#error").show();
-            event.preventDefault();
-          }  
+          return;
+        }
+        alert("Mensaje enviado");
+        document.getElementById("formulario").submit();
+  
         
+  }
+    
   
-      });
-  
-      })
     </script>
   </head>
     <title>Administración Duro Marmol</title>
@@ -167,7 +166,7 @@
   <h1 align="center"> Modulo de cotizaciones </h1>
 
   <div class="container">
-    <form>
+    <form method="post" action="" id="formulario">
         <div class="form-group row">
           <label for="numeroCotizacion" class="col-sm-2 col-form-label">Número cotizacion</label>
           <div class="col-sm-10">
@@ -199,12 +198,14 @@
           </div>
         </div>
       
-        <div class="form-group row">
+        <!-- <div class="form-group row">
           <div class="col-sm-10">
             <button type="submit" class="btn btn-primary">Grabar Cotización</button>
           </div>
-        </div>
-      </form>
+        </div> -->
+        <input type="button" class="btn btn-danger" onclick="validacion()" id="enviar" value="Grabar Cotización">
+        <input type="reset" class="btn btn-primary" id="limpiar" value="Limpiar">
+        <div id="error" style="display:none;" class="alert alert-danger" role="alert"></div>      </form>
     </div>
 
   <!-- Optional JavaScript; choose one of the two! -->
