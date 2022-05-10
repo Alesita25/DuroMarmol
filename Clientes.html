@@ -127,19 +127,47 @@
     <h1 align="center"> Modulo Clientes</h1>
 
     <div class="container">
-        <form>
+        <form action="#" method="post" name="registrarDatos" id="registrarDatos">
+            <div id="resultadoValidacion">
+            </div>
+            <br>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                    Rut
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault2">
+                <label class="form-check-label" for="flexRadioDefault2">
+                    Pasaporte
+                </label>
+            </div>
+            <br>
+            <br>
             <div class="form-group row">
-                <label for="rutCliente" class="col-sm-2 col-form-label">Rut Cliente</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="rutCliente" placeholder="17860190-3">
+                <label for="rutCliente" class="col-sm-2 col-form-label" id="labeltext" name="labeltext">Rut Cliente</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="RutCliente" name="RutCliente" placeholder="17860190">
+                </div>
+                <hr>
+                <div class="col-sm-1">
+                    <input type="text" class="form-control" name="DvCliente" id="DvCliente" placeholder="1">
                 </div>
             </div>
-            <div class="form-group row">
-                <label for="nombreCliente" class="col-sm-2 col-form-label">Nombre Cliente</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="nombreCliente" placeholder="nombreCliente">
-                </div>
+            <br>
             </div>
+            <!-- <div class="form-group row">
+                <label for="NombreCliente" class="col-sm-2 col-form-label">Nombre Cliente</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="NombreCliente" name="NombreCliente" placeholder="nombreCliente">
+                </div>
+            </div> -->
+            <label>NombreCliente:</label><br />
+            <input type="text" id="NombreCliente" class="col-sm-2 col-form-label"><br />
+            <div id="mensaje3" class="errores">Ingrese un Nombre</div>
+
+
             <div class="form-group row">
                 <label for="direccion" class="col-sm-2 col-form-label">direccion</label>
                 <div class="col-sm-10">
@@ -165,52 +193,34 @@
                     <button type="submit" class="btn btn-primary btn-sm">Buscar</button>
                 </div>
                 <div class="col-sm-4 col">
-                    <button type="submit" class="btn btn-primary btn-sm">Guardar</button>
+                    <input type="submit" class="bEnviar" value="Enviar datos" class="boton">
                 </div>
             </div>
 
         </form>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/validate-js/2.0.1/validate.min.js"
+        integrity="sha256-FtvY52LIDZ2/QHmDNay6PTYvLlRsZICHak0iJEAIBuM=" crossorigin="anonymous"></script>
 
 
-
-   
-    
+    <script src="valida.js"></script>
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-    </script>
+    </script> -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
-
-</body>
-
-
-<!--<style>
-    .footer {
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        background-color: red;
-        color: white;
-        text-align: center;
-        /* margin-top: 50px;
-        width: 100%;
-        height: 200px; */
-    }
-</style>
-
-<div class="footer">
-    <p>Footer</p>
-</div>-->
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
+</body>   
 
 
 
