@@ -30,7 +30,7 @@
       }
       if(Tipo=="" || Tipo==null){
         alert("El Tipo de producto está en blanco");
-        document.formulario.material.focus()
+        document.formulario.Tipo.focus()
 
         return;
       }
@@ -167,7 +167,7 @@
           </div>
       </div>
       
-      <input type="button" class="btn btn-danger" onclick="validacion()" id="enviar" value="Buscar Producto">
+        <input type="button" class="btn btn-danger" onclick="validacion()" id="enviar" value="Buscar Producto">
         <input type="reset" class="btn btn-primary" id="limpiar" value="Guardar">
         <div id="error" style="display:none;" class="alert alert-danger" role="alert"></div>      </form>
     
