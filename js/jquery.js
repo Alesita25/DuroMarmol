@@ -9,12 +9,12 @@ $(document).ready(function () {
     //     });
     // });
     $.ajax({
-        type: "GET",
-        url: "https://mindicador.cl/api",
-        dataType: "json",
-        success: function (data) {
-            $.each(data, function (i, item) {
-                if (typeof item.codigo === 'undefined') {
+        type: "GET", //indico el metodo
+        url: "https://mindicador.cl/api", //URL API
+        dataType: "json", //Estructura
+        success: function (data) { //rescata data
+            $.each(data, function (i, item) {//recorre info
+                if (typeof item.codigo === 'undefined') { //Pregunto si el campo Código viene undefined no muestro nada
 
                 } else {
 
@@ -29,7 +29,7 @@ $(document).ready(function () {
                     //     '</div>'
                     // $("#tarjetas").append(tarjeta);
 
-                    var tarjeta = '<div class="card text-white bg-secondary tarjetasValor " >'+
+                    var tarjeta = '<div class="card text-white bg-secondary tarjetasValor " >'+ //genero card por cada registro que me devuelve el servicio.
                         '<div class="card-header titulo ">' + item.codigo + '</div>'+
                         '<div class="card-body">'+
                             '<h5 class="card-title">' + item.nombre + '</h5>'+
