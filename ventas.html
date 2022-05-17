@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <!-- jquery -->
+    <script src="./jquery/jquery-3.6.0.min.js"></script>
+    <script src="./jquery/jquery.validate.min.js"></script>
+     <!--CSS Barra-->
+    <link rel="stylesheet" href="./ventas/slideMenu.css">
+    <link rel="stylesheet" href="./ventas/ventas.css">
+    <link rel="stylesheet" href="./ventas/formModal.css">
+    
+    <title>Administración Duro Marmol</title>
+  </head>
+  <body>
+      <section class="menu">
+        <div class="sidebar">
+          <div class="logo-details">
+              <img src="./imagenes/logo.jpg" width="20px" height="20px" id="img_logo" class="img_logo">
+              <div class="logo_name">Duro Marmol</div>
+              <i class='bx bx-menu' id="btn" ></i>
+          </div>
+          <ul class="nav-list">
+            <li>
+                <i class='bx bx-search' ></i>
+               <input type="text" placeholder="Search...">
+               <span class="tooltip">Buscar</span>
+            </li>
+            <li>
+              <a href="#">
+                <i class='bx bx-grid-alt'></i>
+                <span class="links_name">Pagina principal</span>
+              </a>
+               <span class="tooltip">Pagina principal</span>
+            </li>
+            <li>
+             <a href="./ventas.html">
+               <!--<i class='bx bx-user' ></i>-->
+               <i class='bx bxs-store'></i>
+               <span class="links_name">Ventas</span>
+             </a>
+             <span class="tooltip">Ventas</span>
+           </li>
+           <li>
+             <a href="#">
+               <i class='bx bx-chat' ></i>
+               <span class="links_name">Compras</span>
+             </a>
+             <span class="tooltip">Compras</span>
+           </li>
+           <li>
+             <a href="#">
+               <i class='bx bx-pie-chart-alt-2' ></i>
+               <span class="links_name">Inventario</span>
+             </a>
+             <span class="tooltip">Inventario</span>
+           </li>
+           <li class="profile">
+               <div class="profile-details">
+                 <img src="" alt="">
+                 <div class="name_job">
+                   <div class="name">José Eskenazi</div>
+                   <div class="job">Diseñador web</div>
+                 </div>
+               </div>
+               <i class='bx bx-log-out' id="log_out" ></i>
+           </li>
+          </ul>
+        </div>
+      </section>
+      <section class="homePage" id="homeButton">
+                <!--Barra de navegacion-->
+                <div class="nav">
+                  <input type="checkbox" id="nav-check">
+                  <div class="nav-btn">
+                    <label for="nav-check">
+                      <!-- icono-->
+                      <i class='bx bxs-door-open' style="color: #fff;"></i>
+                    </label>
+                  </div>
+                  <div class="nav-links">
+                    <a href="#" type="button" class="show_form1" id="show_form1">Ingreso de pedidos</a>
+                    <a href="#" type="button" class="show_form2" id="cotizaBtn">Cotizaciones</a>
+                    <a href="#" type="button" class="show_form3" id="clientesBtn">Clientes</a>
+                  </div>
+                </div>
+        
+                <!-- Formulario Modal 1-->
+                <div id="modal" class="modal-container">
+                  <div class="modal-content">
+                    <span class="cerrar" id="close-modal">x</span>
+                    <h1 align="center">Modulo pedido</h1>
+                    <form id="modal1Form">      
+                      <input type="text" class="feedback-input"  id="idPedido" placeholder="Numero pedido" name="numeroPedido"/>   
+                      <input type="text" class="feedback-input" id="rutCliente" placeholder="Rut  del cliente" name="rutCliente" />
+                      <input type="text" class="feedback-input" id="nombreCliente" placeholder="Nombre del cliente" name="nombreCliente" /> 
+                      <textarea  class="feedback-input" id="detallePedido" placeholder="Detalle del pedido" name="detallePedido"></textarea>
+                      <input type="submit" value="Enviar" id="btn-enviar1"/>
+                    </form>
+                  </div>
+                </div>
+                <!-- Formulario modal 2-->
+                <div id="modal2" class="modal-container2">
+                  <div class="modal-content2">
+                    <span class="cerrar2" id="close-modal2">x</span>
+                    <h1 align="center">Modulo pedido</h1>
+                    <form id="modal2Form">      
+                      <input type="text" class="feedback-input" placeholder="Numero pedido" name="numeroPedido" />   
+                      <input type="text" class="feedback-input" placeholder="Rut  del cliente" name="Rutcliente" />
+                      <input type="text" class="feedback-input" placeholder="Nombre del cliente" name="nombreCliente" /> 
+                      <textarea  class="feedback-input" placeholder="Detalle del pedido" name="DetallePedido"></textarea>
+                      <input type="submit" value="Enviar"/>
+                    </form>
+                  </div>
+                </div>
+                <!-- Formulario modal 2-->
+                <div id="modal3" class="modal-container3">
+                  <div class="modal-content3">
+                    <span class="cerrar3" id="close-modal3">x</span>
+                    <h1 align="center">Modulo pedido</h1>
+                    <form id="modal3Form">      
+                      <input type="text" class="feedback-input" placeholder="Numero pedido" name="numeroPedido" />   
+                      <input type="text" class="feedback-input" placeholder="Rut  del cliente" name="Rutcliente" />
+                      <input type="text" class="feedback-input" placeholder="Nombre del cliente" name="nombreCliente" /> 
+                      <textarea  class="feedback-input" placeholder="Detalle del pedido" name="DetallePedido"></textarea>
+                      <input type="submit" value="Enviar"/>
+                    </form>
+                   </div>
+                </div>
+
+                
+      </section>
+
+
+      <script src="./ventas/slideMenu.js"></script>
+      <script src="./ventas/ventas.js"></script>
+    
+  </body>
+</html>
