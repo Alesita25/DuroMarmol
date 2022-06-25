@@ -1,4 +1,5 @@
 {% load static %}
+{% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -174,40 +175,43 @@
         </form> -->
 
         
-          <div class="row col-sm-12">
-            <h1>Listado de Clientes</h1>
-        </div>
         <div class="row col-sm-12">
-          <table border="1">
-            <tr><td>Rut</td><td>Nombre</td><td>Dirección</td><td>Telefono</td><td>Email</td></tr>
-            {% for cl in clientes %}
-            <tr><td>{{cl.idCliente}}</td><td>{{cl.nombreCliente}}</td><td>{{cl.direccion}}</td><td>{{cl.telefono}}</td><td>{{cl.mail}}</td>
-            <td><a href="{% url 'mod_clientes' cl.idCliente %}">Modificar</a></td>
-            <td><a href="{% url 'bor_clientes' cl.idCliente %}">Borrar</a></td>
-            </tr>
-            {% endfor %}
-          </table>
+          <h1 class="text-center col-3" style="margin-left:5%;">Consulta Clientes</h1>
+      </div>
       
-        </div> 
-      
-      <div class="row col-sm-12">
+      <div class="col-12 col-md-4 offset-md-4">
       <form method="POST" action="" id="formulario">
       {% csrf_token %}
       <div class="form-group">
-      {{form.as_table}}
+        {% csrf_token %}
+        {{ form | crispy }}
       </div>
-      <input type="submit" class="btn btn-danger" id="enviar" value="Enviar">
-      <input type="submit" class="btn btn-danger" id="modificar" value="Modificar">
-      <input type="reset" class="btn btn-primary" id="limpiar" value="Limpiar">
-      <div id="error" class="alert alert-danger" role="alert"></div>
+      <input type="submit" class="btn btn-danger" id="enviar" value="Ingresar">
+      <input type="button" class="btn btn-primary" onclick="history.back()" name="volver atrás" value="volver atrás">
+      
+      <!-- <div id="error" class="alert alert-danger" role="alert"></div> -->
       </form>
-      <div class="alert alert-success" role="alert">
+      <!-- <div class="alert alert-success" role="alert"> -->
       {{mensaje}}
       
          </div>         
       </div>
     </div>
+   <br>
+  <div class="row col-sm-12">
+    <table class="table table-hover table-responsive-sm col-12 col-md-10 offset-md-1">
+      <thead class="table-dark">
+        <tr><td>Rut</td><td>Nombre</td><td>Dirección</td><td>Telefono</td><td>Email</td><td>Acción</td><td> </td></tr>
+        </thead>
+      {% for cl in clientes %}
+      <tr><td>{{cl.idCliente}}</td><td>{{cl.nombreCliente}}</td><td>{{cl.direccion}}</td><td>{{cl.telefono}}</td><td>{{cl.mail}}</td>
+      <td><a href="{% url 'mod_clientes' cl.idCliente %}" class="btn btn-outline-success">Modificar</a></td>
+      <td><a href="{% url 'bor_clientes' cl.idCliente %}" class="btn btn-outline-danger">Borrar</a></td>
+      </tr>
+      {% endfor %}
+    </table>
 
+  </div> 
   
   
     </div>

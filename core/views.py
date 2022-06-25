@@ -25,7 +25,7 @@ def clientes(request):
         formulario = clientesForm(request.POST)
         if formulario.is_valid:
             formulario.save()
-            datos['mensaje'] = "Guardados Correctamente"
+            datos['mensaje'] = "Cliente guardado Correctamente"
 
     return render(request, 'core/clientes.html',datos)
 
@@ -38,7 +38,7 @@ def mod_clientes(request,id):
         formulario = clientesForm(data=request.POST,instance=clientes)
         if formulario.is_valid:
             formulario.save()
-            datos['mensaje'] = "Modificados correctamente"
+            datos['mensaje'] = "Datos modificados correctamente"
     return render(request, 'core/mod_clientes.html',datos)
 
 def bor_clientes(request,id):

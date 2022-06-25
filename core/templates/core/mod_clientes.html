@@ -1,4 +1,5 @@
 {% load static %}
+{% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,7 +45,7 @@
           <li><a class="link_name" href="#">Ventas</a></li>
           <li><a href="#">Ingreso de pedidos</a></li>
           <li><a href="#">Cotizaciones</a></li>
-          <li><a href="#">Clientes</a></li>
+          <li><a href="{% url 'clientes'%}">Clientes</a></li>
         </ul>
       </li>
       <li>
@@ -186,19 +187,25 @@
           </table>
       
         </div>  -->
+
+        <div class="row col-sm-12">
+          <h1 class="text-center">Modificar Cliente</h1>
+      </div>
       
-      <div class="row col-sm-12">
+      <div class="col-12 col-md-4 offset-md-4">
       <form method="POST" action="" id="formulario">
       {% csrf_token %}
       <div class="form-group">
-      {{form.as_table}}
+        {% csrf_token %}
+        {{ form | crispy }}
       </div>
       
       <input type="submit" class="btn btn-danger" id="enviar" value="Modificar">
-      <input type="reset" class="btn btn-primary" id="limpiar" value="Limpiar">
-      <div id="error" class="alert alert-danger" role="alert"></div>
+      <input type="button" class="btn btn-primary" onclick="history.back()" name="volver atrás" value="volver atrás">
+      
+      <!-- <div id="error" class="alert alert-danger" role="alert"></div> -->
       </form>
-      <div class="alert alert-success" role="alert">
+      <!-- <div class="alert alert-success" role="alert"> -->
       {{mensaje}}
       
          </div>         

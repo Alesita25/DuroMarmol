@@ -1,4 +1,5 @@
 {% load static %}
+{% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -191,14 +192,15 @@
       <form method="POST" action="" id="formulario">
       {% csrf_token %}
       <div class="form-group">
-      {{form.as_table}}
+        {% csrf_token %}
+        {{ form | crispy }}
       </div>
       
-      <input type="submit" class="btn btn-danger" id="enviar" value="Modificar">
-      <input type="reset" class="btn btn-primary" id="limpiar" value="Limpiar">
-      <div id="error" class="alert alert-danger" role="alert"></div>
+      <input type="submit" class="btn btn-danger" id="enviar" value="Ingresar">
+      <input type="button" class="btn btn-primary" onclick="history.back()" name="volver atrás" value="volver atrás">
+      <!-- <div id="error" class="alert alert-danger" role="alert"></div> -->
       </form>
-      <div class="alert alert-success" role="alert">
+      <!-- <div class="alert alert-success" role="alert"> -->
       {{mensaje}}
       
          </div>         
