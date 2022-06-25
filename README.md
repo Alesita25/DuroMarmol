@@ -1,2 +1,0 @@
-# DuroMarmol
-Proyecto Semestral
