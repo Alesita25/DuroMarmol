@@ -1,14 +1,6 @@
 $(document).ready(function () {
     var flag = false;
-    // $.getJSON('https://mindicador.cl/api',
-    // function(data){
-    //     console.log(data);
-    //     $.each(data.uf,function(i,item){
-    //         $("#uf").append("<tr><td>"+item.codigo+"</td><td>" + item.nombre +
-    //                                 "</td><td>" + item.fecha +
-    //                                 "</td><td>"+item.valor+"</td></tr>");
-    //     });
-    // });
+
     $.ajax({
         type: "GET", //indico el metodo
         url: "https://mindicador.cl/api", //URL API
@@ -21,9 +13,6 @@ $(document).ready(function () {
 
                 } else {
 
-
-         
-
                         var tarjeta = '<div class=" text-white tarjetasValor " >'+ //genero card por cada registro que me devuelve el servicio.
                         '<div class="card-header titulo ">' + item.codigo + '</div>'+
                         '<div class="card-body">'+
@@ -35,28 +24,6 @@ $(document).ready(function () {
                         '</div>'
                         $("#tarjetas").append(tarjeta);
 
-                    
-                    // var tarjeta =
-                    //     '<div class="card text-white bg-secondary " style="width: 18rem;">' +
-                    //     '<div class="card-header">' + item.codigo + '</div>' +
-                    //     '<div class="card-body">' +
-                    //     '<h5 class="card-title">' + item.codigo + '</h5>' +
-                    //     '<h6 class="card-subtitle mb-2 text-muted">' + item.nombre + '</h6>' +
-                    //     '<p class="card-text">' + item.valor + '</p>' +
-                    //     '</div>' +
-                    //     '</div>'
-                    // $("#tarjetas").append(tarjeta);
-
-     
-
-
-                    //     var row = "<tr>"+
-                    //     "<td>" + item.codigo + "</td>" + 
-                    //     "<td>" + item.nombre + "</td>" +
-                    //     "<td>" + item.fecha + "</td>" +
-                    //     "<td>" + item.valor + "</td>" +
-                    //     "</tr>";						 
-                    //    $("#uf>tbody").append(row);
                 }
             });
             flag=true;

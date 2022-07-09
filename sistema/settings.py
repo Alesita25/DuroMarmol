@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'core',
     "crispy_forms",
     "crispy_bootstrap5",
+    'productos',
+    'rest_framework',
 
 ]
 
